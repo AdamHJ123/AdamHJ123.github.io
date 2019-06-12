@@ -223,9 +223,9 @@ body.nav-active .nav-btn .nav-btn__icon {
     .nav-btn .nav-btn__icon::after {
       transform: translate(-50%, -50%) translateY(8px); }
 
-body.nav-active {
-  overflow: hidden; }
-  @media screen and (max-width: 759px) {
+@media screen and (max-width: 759px) {
+  body.nav-active {
+    overflow: hidden; }
     body.nav-active .nav {
       position: fixed;
       top: 50px;
