@@ -173,9 +173,6 @@ body.sticky-enabled .hero {
           font-size: 40px;
           margin-bottom: 10px; } }
 
-.main {
-  padding-top: 3000px; }
-
 body.nav-active .nav-btn .nav-btn__icon {
   background: transparent; }
   body.nav-active .nav-btn .nav-btn__icon::before {
@@ -197,7 +194,7 @@ body.nav-active .nav-btn .nav-btn__icon {
     animation: nav-btn-after-open 600ms linear forwards; }
   .nav-btn.nav-btn--hero {
     position: absolute;
-    top: 0;
+    top: 10px;
     left: 15px;
     z-index: 1; }
   .nav-btn .nav-btn__icon {
@@ -229,10 +226,10 @@ body.nav-active .nav-btn .nav-btn__icon {
     body.nav-active .nav {
       position: fixed;
       top: 50px;
+      right: 0;
       left: 0;
-      width: 100%;
       height: calc(100% - 50px);
-      background: #464646;
+      background: rgba(70, 70, 70, 0.9);
       pointer-events: all;
       opacity: 1;
       transform: scaleY(1); }
@@ -360,3 +357,97 @@ body.nav-active .nav-btn .nav-btn__icon {
       pointer-events: all; } }
   .nav .nav__link:hover {
     color: #3fc8a7; }
+
+.portfolio {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap; }
+  .portfolio h2 {
+    width: 100%; }
+  .portfolio .portfolio__item {
+    position: relative;
+    width: 100%; }
+    @media (min-width: 760px) {
+      .portfolio .portfolio__item {
+        width: 50%; } }
+    @media (min-width: 960px) {
+      .portfolio .portfolio__item:hover::before {
+        background: rgba(0, 0, 0, 0.4); } }
+    @media (min-width: 960px) {
+      .portfolio .portfolio__item:hover .portfolio__horizonal-lines::before, .portfolio .portfolio__item:hover .portfolio__horizonal-lines::after {
+        transform: scaleX(1); } }
+    @media (min-width: 960px) {
+      .portfolio .portfolio__item:hover .portfolio__vertical-lines::before, .portfolio .portfolio__item:hover .portfolio__vertical-lines::after {
+        transform: scaleY(1); } }
+    .portfolio .portfolio__item::before {
+      content: "";
+      display: block;
+      padding-top: 60%;
+      background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
+      z-index: 1; }
+      @media (min-width: 960px) {
+        .portfolio .portfolio__item::before {
+          background: none; } }
+  .portfolio .portfolio__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: -1; }
+  .portfolio .portfolio__info {
+    position: absolute;
+    right: 6%;
+    bottom: 12%;
+    left: 6%;
+    color: #fff; }
+  .portfolio .portfolio__horizonal-lines,
+  .portfolio .portfolio__vertical-lines {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; }
+    .portfolio .portfolio__horizonal-lines::before, .portfolio .portfolio__horizonal-lines::after,
+    .portfolio .portfolio__vertical-lines::before,
+    .portfolio .portfolio__vertical-lines::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 6%;
+      right: 3.75%;
+      left: 3.75%;
+      height: 2px;
+      background: #fff;
+      z-index: 2; }
+      @media (min-width: 960px) {
+        .portfolio .portfolio__horizonal-lines::before, .portfolio .portfolio__horizonal-lines::after,
+        .portfolio .portfolio__vertical-lines::before,
+        .portfolio .portfolio__vertical-lines::after {
+          transform-origin: center center;
+          transition: transform 300ms ease-in-out; } }
+  @media (min-width: 960px) {
+    .portfolio .portfolio__horizonal-lines::before, .portfolio .portfolio__horizonal-lines::after {
+      transform: scaleX(0); } }
+  .portfolio .portfolio__horizonal-lines::after {
+    top: auto;
+    bottom: 6%; }
+  .portfolio .portfolio__vertical-lines {
+    display: block; }
+    .portfolio .portfolio__vertical-lines::before, .portfolio .portfolio__vertical-lines::after {
+      height: auto;
+      width: 2px; }
+      @media (min-width: 960px) {
+        .portfolio .portfolio__vertical-lines::before, .portfolio .portfolio__vertical-lines::after {
+          transform: scaleY(0); } }
+    .portfolio .portfolio__vertical-lines::before {
+      right: auto;
+      bottom: 6%; }
+    .portfolio .portfolio__vertical-lines::after {
+      bottom: 6%;
+      left: auto; }
