@@ -84,6 +84,26 @@ button {
   height: 40px;
   text-decoration: none; }
 
+.close-btn {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px; }
+  .close-btn::before, .close-btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 24px;
+    height: 2px;
+    background: #fff; }
+  .close-btn::after {
+    transform: translate(-50%, -50%) rotate(-45deg); }
+
 body.sticky-enabled .header {
   opacity: 1;
   pointer-events: all;
@@ -373,9 +393,7 @@ body.modal-enabled {
   body.modal-enabled .portfolio.portfolio--modal {
     opacity: 1;
     pointer-events: all; }
-    body.modal-enabled .portfolio.portfolio--modal .portfolio__item .portfolio__item--active,
-    body.modal-enabled .portfolio.portfolio--modal .portfolio__item .portfolio__item--previous,
-    body.modal-enabled .portfolio.portfolio--modal .portfolio__item .portfolio__item--next {
+    body.modal-enabled .portfolio.portfolio--modal .portfolio__item.portfolio__item--active, body.modal-enabled .portfolio.portfolio--modal .portfolio__item.portfolio__item--previous, body.modal-enabled .portfolio.portfolio--modal .portfolio__item.portfolio__item--next {
       pointer-events: all; }
 
 .portfolio {
@@ -518,7 +536,7 @@ body.modal-enabled {
       opacity: 0;
       pointer-events: none; }
       .portfolio.portfolio--modal .portfolio__item::before {
-        background: none; }
+        display: none; }
       .portfolio.portfolio--modal .portfolio__item::after {
         content: "";
         display: block;
@@ -541,7 +559,8 @@ body.modal-enabled {
         box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
         opacity: 1; }
         .portfolio.portfolio--modal .portfolio__item.portfolio__item--previous .portfolio__info, .portfolio.portfolio--modal .portfolio__item.portfolio__item--next .portfolio__info {
-          opacity: 0; }
+          opacity: 0;
+          pointer-events: none; }
       .portfolio.portfolio--modal .portfolio__item.portfolio__item--previous {
         left: 0;
         transform: translate(-50%, -50%) scale(0.8); }
