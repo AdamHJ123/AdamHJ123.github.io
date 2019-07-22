@@ -142,6 +142,7 @@ button {
   border: 2px solid #3fc8a7;
   background: #3fc8a7;
   color: #464646;
+  font-family: "ubuntu", Arial, Helvetica, sans-serif;
   line-height: 39px;
   height: 40px;
   text-decoration: none; }
@@ -175,6 +176,38 @@ button {
     .close-btn .close-btn__icon::after {
       -webkit-transform: translate(-50%, -50%) rotate(-45deg);
               transform: translate(-50%, -50%) rotate(-45deg); }
+
+.exp {
+  background: #474747;
+  padding: 60px 20px; }
+  .exp .exp__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; }
+  @media (min-width: 760px) {
+    .exp .exp__item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column;
+              flex-flow: column;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      width: calc(50% - 20px); } }
+  .exp .exp__item:first-child {
+    margin-right: 40px; }
+  .exp .button {
+    margin-top: auto; }
 
 body.sticky-enabled .header {
   opacity: 1;
@@ -219,9 +252,9 @@ body.sticky-enabled .header {
     right: 15px;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
+    font-family: "ubuntu", Arial, Helvetica, sans-serif;
     font-size: 30px;
     line-height: 1;
-    font-family: "ubuntu", Arial, Helvetica, sans-serif;
     text-decoration: none;
     color: #fff; }
     @media (min-width: 760px) {
@@ -275,17 +308,10 @@ body.sticky-enabled .hero {
     text-align: center;
     z-index: 1; }
   .hero .hero__intro {
-    font-family: "ubuntu", Arial, Helvetica, sans-serif;
     color: #fff; }
     @media (min-width: 760px) {
       .hero .hero__intro {
         margin-bottom: 20px; } }
-    .hero .hero__intro h1 {
-      font-size: 48px;
-      margin-bottom: 14px; }
-      @media (min-width: 760px) {
-        .hero .hero__intro h1 {
-          font-size: 70px; } }
     .hero .hero__intro p {
       font-size: 24px; }
       @media (min-width: 760px) {
@@ -446,7 +472,8 @@ body.nav-active .nav-btn .nav-btn__icon {
 .nav .nav__item {
   display: block;
   width: 100%;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-family: "ubuntu", Arial, Helvetica, sans-serif; }
   @media (min-width: 760px) {
     .nav .nav__item {
       width: 90px;
@@ -492,8 +519,7 @@ body.nav-active .nav-btn .nav-btn__icon {
   font-size: 18px;
   line-height: 29px;
   color: #fff;
-  text-decoration: none;
-  font-family: "ubuntu", Arial, Helvetica, sans-serif; }
+  text-decoration: none; }
   @media (min-width: 760px) {
     .nav .nav__link {
       pointer-events: all; } }
@@ -530,8 +556,8 @@ body.modal-enabled {
       content: "";
       display: block;
       padding-top: 60%;
-      background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.1)));
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), to(rgba(0, 0, 0, 0.3)));
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 100%);
       z-index: 1; }
       @media (min-width: 960px) {
         .portfolio .portfolio__item::before {
@@ -567,22 +593,10 @@ body.modal-enabled {
     position: absolute;
     right: 9%;
     bottom: 12%;
-    left: 9%;
-    font-family: "ubuntu", Arial, Helvetica, sans-serif; }
+    left: 9%; }
     @media (min-width: 960px) {
       .portfolio .portfolio__info {
         opacity: 0; } }
-    .portfolio .portfolio__info h3 {
-      font-size: 22px;
-      margin-bottom: 16px;
-      color: #fff; }
-    .portfolio .portfolio__info p {
-      font-size: 18px;
-      line-height: 24px;
-      margin-bottom: 16px;
-      color: #fff; }
-    .portfolio .portfolio__info a {
-      color: inherit; }
     .portfolio .portfolio__info .portfolio__info-list {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -688,6 +702,8 @@ body.modal-enabled {
         -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
                 box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
         z-index: 1; }
+        .portfolio.portfolio--modal .portfolio__item.portfolio__item--active::after {
+          background: rgba(0, 0, 0, 0.7); }
         .portfolio.portfolio--modal .portfolio__item.portfolio__item--active .portfolio__info {
           opacity: 1; }
       .portfolio.portfolio--modal .portfolio__item.portfolio__item--previous, .portfolio.portfolio--modal .portfolio__item.portfolio__item--next {
@@ -724,3 +740,27 @@ body.modal-enabled {
           margin-bottom: auto; }
       .portfolio.portfolio--modal .portfolio__item .portfolio__info-list {
         margin-bottom: 10px; }
+
+h1 {
+  font-family: "ubuntu", Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  margin-bottom: 14px; }
+  @media (min-width: 760px) {
+    h1 {
+      font-size: 70px; } }
+
+h3 {
+  font-family: "ubuntu", Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: #fff; }
+
+p {
+  font-family: "ubuntu", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 16px;
+  color: #fff; }
+
+a {
+  color: inherit; }
