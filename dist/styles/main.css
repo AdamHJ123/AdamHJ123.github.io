@@ -1,3 +1,30 @@
+.about {
+  position: relative;
+  padding: 70px 20px;
+  background: url("/dist/images/about-background.jpg") center center no-repeat/cover; }
+  .about::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(71, 71, 71, 0.75); }
+  .about .about__inner {
+    position: relative;
+    z-index: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto; }
+
 @-webkit-keyframes opacity-to-full {
   0%, 66% {
     opacity: 0; }
@@ -98,7 +125,7 @@
     -webkit-transform: translate(-50%, -50%) translateY(8px);
             transform: translate(-50%, -50%) translateY(8px); } }
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, li, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -112,9 +139,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   line-height: 1; }
-
-ol, ul {
-  list-style: none; }
 
 blockquote, q {
   quotes: none; }
@@ -146,6 +170,10 @@ button {
   line-height: 39px;
   height: 40px;
   text-decoration: none; }
+  .button--awards {
+    line-height: 29px;
+    height: 30px;
+    margin-right: 10px; }
 
 .close-btn {
   display: block;
@@ -178,36 +206,19 @@ button {
               transform: translate(-50%, -50%) rotate(-45deg); }
 
 .exp {
-  background: #474747;
-  padding: 60px 20px; }
-  .exp .exp__inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto; }
-  @media (min-width: 760px) {
-    .exp .exp__item {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-flow: column;
-              flex-flow: column;
-      -webkit-box-align: start;
-          -ms-flex-align: start;
-              align-items: flex-start;
-      width: calc(50% - 20px); } }
-  .exp .exp__item:first-child {
-    margin-right: 40px; }
-  .exp .button {
-    margin-top: auto; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  background: #474747; }
+  .exp .exp__item {
+    display: block;
+    width: 50%; }
+    .exp .exp__item--wide {
+      width: 100%; }
 
 body.sticky-enabled .header {
   opacity: 1;
@@ -289,7 +300,7 @@ body.sticky-enabled .hero {
   position: relative;
   max-height: 600px;
   padding: 100px 20px 60px;
-  background: url("/dist/images/hero.jpg") center center no-repeat/cover; }
+  background: url("/dist/images/hero.jpg") no-repeat center center/cover; }
   @media (min-width: 760px) {
     .hero {
       min-height: 300px;
@@ -312,10 +323,10 @@ body.sticky-enabled .hero {
     @media (min-width: 760px) {
       .hero .hero__intro {
         margin-bottom: 20px; } }
-    .hero .hero__intro p {
+    .hero .hero__intro p, .hero .hero__intro li {
       font-size: 24px; }
       @media (min-width: 760px) {
-        .hero .hero__intro p {
+        .hero .hero__intro p, .hero .hero__intro li {
           font-size: 40px;
           margin-bottom: 10px; } }
 
@@ -580,6 +591,13 @@ body.modal-enabled {
       .portfolio .portfolio__item:hover .portfolio__vertical-lines::before, .portfolio .portfolio__item:hover .portfolio__vertical-lines::after {
         -webkit-transform: scaleY(1);
                 transform: scaleY(1); } }
+    .portfolio .portfolio__item--wide {
+      width: 100%; }
+      .portfolio .portfolio__item--wide::before {
+        padding-top: 400px; }
+    @media (min-width: 960px) {
+      .portfolio .portfolio__item--darker:hover::before {
+        background: rgba(0, 0, 0, 0.75); } }
   .portfolio .portfolio__image {
     position: absolute;
     top: 0;
@@ -664,6 +682,11 @@ body.modal-enabled {
     .portfolio .portfolio__vertical-lines::after {
       bottom: 6%;
       left: auto; }
+  .portfolio__awards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 16px; }
   .portfolio.portfolio--modal {
     position: fixed;
     top: 0;
@@ -703,6 +726,8 @@ body.modal-enabled {
                 box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.4);
         z-index: 1; }
         .portfolio.portfolio--modal .portfolio__item.portfolio__item--active::after {
+          background: rgba(0, 0, 0, 0.5); }
+        .portfolio.portfolio--modal .portfolio__item.portfolio__item--active.portfolio__item--darker::after {
           background: rgba(0, 0, 0, 0.7); }
         .portfolio.portfolio--modal .portfolio__item.portfolio__item--active .portfolio__info {
           opacity: 1; }
@@ -749,13 +774,19 @@ h1 {
     h1 {
       font-size: 70px; } }
 
+h2 {
+  font-family: "ubuntu", Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  margin-bottom: 16px;
+  color: #fff; }
+
 h3 {
   font-family: "ubuntu", Arial, Helvetica, sans-serif;
   font-size: 22px;
   margin-bottom: 16px;
   color: #fff; }
 
-p {
+p, li {
   font-family: "ubuntu", Arial, Helvetica, sans-serif;
   font-size: 18px;
   line-height: 26px;
@@ -764,3 +795,9 @@ p {
 
 a {
   color: inherit; }
+
+ul {
+  width: 100%; }
+
+li {
+  list-style: none; }

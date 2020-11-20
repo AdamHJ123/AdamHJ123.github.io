@@ -48,6 +48,25 @@ $(function () {
     }
   }
 
+  $(document).on('click', 'a[href^="#"]', function(e) {
+    var id = $(this).attr('href');
+
+    var $id = $(id);
+    if ($id.length === 0) {
+        return;
+    }
+
+    e.preventDefault();
+
+    let pos = $id.offset().top;
+
+    if (id === '#experience') {
+      pos = pos -= 79;
+    }
+
+    $('body, html').animate({scrollTop: pos});
+});
+
   function portfolioModalOpen(e) {
     if ($(window).width() >= 960) {
       event.preventDefault();

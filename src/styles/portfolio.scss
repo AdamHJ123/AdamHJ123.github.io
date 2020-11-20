@@ -1,7 +1,3 @@
-body {
-
-}
-
 body.modal-enabled {
   overflow: hidden;
 
@@ -78,6 +74,24 @@ body.modal-enabled {
         &::after {
           @include breakpoint("laptop") {
             transform: scaleY(1);
+          }
+        }
+      }
+    }
+
+    &--wide {
+      width: 100%;
+
+      &::before {
+        padding-top: 400px;
+      }
+    }
+
+    &--darker {
+      &:hover {
+        &::before {
+          @include breakpoint("laptop") {
+            background: rgba(0,0,0,0.75);
           }
         }
       }
@@ -185,6 +199,11 @@ body.modal-enabled {
     }
   }
 
+  &__awards {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
   &.portfolio--modal {
     position: fixed;
     top: 0;
@@ -228,7 +247,13 @@ body.modal-enabled {
         z-index: 1;
 
         &::after {
-          background: rgba(0,0,0,0.7);
+          background: rgba(0,0,0,0.5);
+        }
+
+        &.portfolio__item--darker {
+          &::after {
+            background: rgba(0,0,0,0.7);
+          }
         }
 
         .portfolio__info {

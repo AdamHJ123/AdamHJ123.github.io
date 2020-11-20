@@ -23,15 +23,15 @@
     <div class="hero__inner">
       <div class="hero__intro">
         <h1>Adam Jacks</h1>
-        <p>Web Developer</p>
+        <p>Full-Stack Web & Application Developer</p>
       </div>
       <nav class="nav">
         <ul class="nav__list">
           <li class="nav__item nav__item--button">
-            <a class="nav__link" href="#portfolio">portfolio</a>
+            <a class="nav__link" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav__item nav__item--button nav__item--button-secondary">
-            <a class="nav__link" href="#experience">experience</a>
+            <a class="nav__link" href="#experience">Experience</a>
           </li>
           <!-- <li class="nav__item">
             <a class="nav__link" href="">skills</a>
@@ -49,11 +49,11 @@
   <main class="main js-main">
     <section class="portfolio" id="portfolio">
       <!-- <h2>Portfolio</h2> -->
-      <a target="_blank" href="https://www.padstowbreaks.com/" class="portfolio__item js-portfolio-item" data-slide=0>
+      <a target="_blank" href="https://www.padstowbreaks.com/" class="portfolio__item portfolio__item--darker js-portfolio-item" data-slide=0>
         <img class="portfolio__image" src="/dist/images/padstow.png" alt="Padstow Breaks">
         <div class="portfolio__info">
           <h3>Padstow Breaks</h3>
-          <p>My person favourite project.</p>
+          <p>My personal favourite project.</p>
           <ul class="portfolio__info-list">
             <li class="portfolio__info-item">HTML</li>
             <li class="portfolio__info-item">SCSS</li>
@@ -81,7 +81,7 @@
         <span class="portfolio__horizonal-lines"></span>
         <span class="portfolio__vertical-lines"></span>
       </a>
-      <a target="_blank" href="https://www.bigcommerce.co.uk/theme/camden-b2b/" class="portfolio__item js-portfolio-item" data-slide=2>
+      <a target="_blank" href="https://www.bigcommerce.co.uk/theme/camden-b2b/" class="portfolio__item portfolio__item--darker js-portfolio-item" data-slide=2>
         <img class="portfolio__image" src="/dist/images/camden.png" alt="Camden Theme">
         <div class="portfolio__info">
           <h3>Camden B2B - Theme</h3>
@@ -143,21 +143,78 @@
         <span class="portfolio__vertical-lines"></span>
       </a>
     </section>
-    <section class="exp" id="experience">
-      <div class="exp__inner">
+
+
+
+
+
+
+
+
+    <section class="portfolio" id="experience">
+      <a target="_blank" href="https://www.luceco.com/uk" class="portfolio__item portfolio__item--wide portfolio__item--darker" data-slide=0>
+        <img class="portfolio__image" src="/dist/images/luceco-wide.png" alt="Luceco website wide">
+        <div class="portfolio__info">
+          <h3>Current Workplace</h3>
+          <h3>Luceco</h3>
+          <p>Working as an inhouse full-stack developer for internal applications and external websites.</p>
+          <ul class="portfolio__info-list">
+            <li class="portfolio__info-item">Angular 2+</li>
+            <li class="portfolio__info-item">.NET core API</li>
+            <li class="portfolio__info-item">PHP</li>
+            <li class="portfolio__info-item">SCSS</li>
+            <li class="portfolio__info-item">Self Reliant</li>
+          </ul>
+        </div>
+        <span class="portfolio__horizonal-lines"></span>
+        <span class="portfolio__vertical-lines"></span>
+      </a>
+      <a target="_blank" href="https://www.luceco.com/uk" class="portfolio__item portfolio__item--darker" data-slide=0>
+        <img class="portfolio__image" src="/dist/images/edgeoftheweb.png" alt="Edge of the Web website">
+        <div class="portfolio__info">
+          <h3>Edge of the Web</h3>
+          <p>From junior front-end developer to front-end developer.</p>
+          <ul class="portfolio__info-list">
+            <li class="portfolio__info-item">HTML</li>
+            <li class="portfolio__info-item">Javascript</li>
+            <li class="portfolio__info-item">PHP</li>
+            <li class="portfolio__info-item">SCSS</li>
+            <li class="portfolio__info-item">GULP</li>
+            <li class="portfolio__info-item">Multiple Content Management Systems</li>
+          </ul>
+        </div>
+        <span class="portfolio__horizonal-lines"></span>
+        <span class="portfolio__vertical-lines"></span>
+      </a>
+      <a target="_blank" href="https://www.luceco.com/uk" class="portfolio__item portfolio__item--darker" data-slide=0>
+        <img class="portfolio__image" src="/dist/images/flair.png" alt="Flair website">
+        <div class="portfolio__info">
+          <h3>Current Workplace</h3>
+          <h3>Luceco</h3>
+          <p>Building and maintaining BigCommerce templates.</p>
+          <ul class="portfolio__info-list">
+            <li class="portfolio__info-item">BigCommerce</li>
+            <li class="portfolio__info-item">PHP</li>
+            <li class="portfolio__info-item">Javascript</li>
+            <li class="portfolio__info-item">SCSS</li>
+            <li class="portfolio__info-item">Handlebars</li>
+          </ul>
+        </div>
+        <span class="portfolio__horizonal-lines"></span>
+        <span class="portfolio__vertical-lines"></span>
+      </a>
+      <!-- <div class="exp__inner">
         <div class="exp__item">
           <h3>Edge of the Web</h3>
           <p>I started my development career at EOTW. Having joined with very little knowledge of web development, the brilliant developers at EOTW taught me more than I ever could have hoped to learn from a university course. I quickly gained the skills and knowledge that I needed to become a good developer which allowed me to work with great projects such as Padstow Breaks and even getting a hand on the SEGA Hardlight website.</p>
-          <p>I spent a total of one year and two months at this company.</p>
           <a target="_blank" href="https://www.edgeoftheweb.co.uk/" class="button">View Website</a>
         </div>
         <div class="exp__item">
           <h3>Flair Consultancy</h3>
           <p>At Flair, I primarily worked on BigCommerce themes using the Stencil platform. Although this company didn't give me the best opportunities and was frankly terrible for personal growth, it was great for teaching me how to build themes for the masses. It helped me learn to be prepared for all scenarios when building websites, e.g. what if a client wants 20 navigation items.</p>
-          <p>I spent a total of seven months at this company.</p>
           <a target="_blank" href="https://www.flairconsultancy.com/" class="button">View Website</a>
         </div>
-      </div>
+      </div> -->
     </section>
     <!-- <section class="about" id="about">
       <div class="about__inner">
@@ -183,12 +240,16 @@
     <button class="close-btn js-modal-close">
       <span class="close-btn__icon"></span>
     </button>
-    <div class="portfolio__item js-portfolio-modal-item" data-slide=0>
+    <div class="portfolio__item portfolio__item--darker js-portfolio-modal-item" data-slide=0>
       <img class="portfolio__image" src="/dist/images/padstow.png" alt="Padstow Breaks">
       <div class="portfolio__info">
         <h3>Padstow Breaks</h3>
-        <p>My person favourite project. I am very thankful I got chosen to build the frontend for this website. I knew this website had plenty going for it from when I first saw the design. This is easily the most challenging project I've worked on to this day, yet the most rewarding after I worked for many days perfecting it.</p>
-        <p>This project has had a couple honorable mentions: <a href="https://www.csslight.com/website/27659/Padstow-Breaks">CSSLight</a> <a href="https://www.awwwards.com/sites/padstow-breaks">Awwwards</a></p>
+        <p>My personal favourite project. I am very thankful for being chosen to build the frontend for this website. I knew this website had plenty going for it from when I first saw the design. This is easily the most challenging project I've worked on to this day, yet the most rewarding after I worked for many days perfecting it.</p>
+        <p>This project has had a couple honorable mentions:</p>
+        <div class="portfolio__awards">
+          <a class="button button--awards" target="_blank" href="https://www.csslight.com/website/27659/Padstow-Breaks">CSSLight</a>
+          <a class="button button--awards" target="_blank" href="https://www.awwwards.com/sites/padstow-breaks">Awwwards</a>
+        </div>
         <ul class="portfolio__info-list">
           <li class="portfolio__info-item">HTML</li>
           <li class="portfolio__info-item">SCSS</li>
@@ -214,7 +275,7 @@
         <a target="_blank" href="https://www.opusproducts.com/" class="button">View Project</a>
       </div>
     </div>
-    <div class="portfolio__item js-portfolio-modal-item" data-slide=2>
+    <div class="portfolio__item portfolio__item--darker js-portfolio-modal-item" data-slide=2>
       <img class="portfolio__image" src="/dist/images/camden.png" alt="Camden Theme">
       <div class="portfolio__info">
         <h3>Camden B2B - Theme</h3>

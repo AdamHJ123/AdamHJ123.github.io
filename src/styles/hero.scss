@@ -12,7 +12,7 @@ body.sticky-enabled {
   position: relative;
   max-height: 600px;
   padding: 100px 20px 60px;
-  background: url("/dist/images/hero.jpg") center center no-repeat / cover;
+  background: url("/dist/images/hero.jpg") no-repeat center center/cover;
 
   @include breakpoint("tablet") {
     min-height: 300px;
