@@ -1,0 +1,33 @@
+.exp {
+  background: #474747;
+  padding: 60px 20px;
+
+  .exp__inner {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .exp__item {
+    @include breakpoint("tablet") {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      width: calc(50% - 20px);
+    }
+
+    &:first-child {
+      margin-right: 40px;
+    }
+  }
+
+  p {
+
+  }
+
+  .button {
+    margin-top: auto;
+  }
+}

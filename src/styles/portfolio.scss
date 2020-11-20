@@ -1,0 +1,279 @@
+body {
+
+}
+
+body.modal-enabled {
+  overflow: hidden;
+
+  .portfolio.portfolio--modal {
+    opacity: 1;
+    pointer-events: all;
+
+    .portfolio__item {
+      &.portfolio__item--active,
+      &.portfolio__item--previous,
+      &.portfolio__item--next {
+        pointer-events: all
+      }
+    }
+  }
+}
+
+.portfolio {
+  display: flex;
+  flex-flow: row wrap;
+
+  h2 {
+    width: 100%;
+  }
+
+  .portfolio__item {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-decoration: none;
+
+    @include breakpoint("tablet") {
+      width: 50%;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 60%;
+      background: linear-gradient(to bottom, rgba(#000, 0.8) 0%,rgba(#000, 0.3) 100%);
+      z-index: 1;
+
+      @include breakpoint("laptop") {
+        background: rgba(0,0,0,0);
+        transition: background 300ms linear;
+      }
+    }
+
+    &:hover {
+      &::before {
+        @include breakpoint("laptop") {
+          background: rgba(0,0,0,0.6);
+        }
+      }
+
+      .portfolio__info {
+        @include breakpoint("laptop") {
+          opacity: 1;
+          transition: opacity 200ms linear 300ms;
+        }
+      }
+
+      .portfolio__horizonal-lines {
+        &::before,
+        &::after {
+          @include breakpoint("laptop") {
+            transform: scaleX(1);
+          }
+        }
+      }
+
+      .portfolio__vertical-lines {
+        &::before,
+        &::after {
+          @include breakpoint("laptop") {
+            transform: scaleY(1);
+          }
+        }
+      }
+    }
+  }
+
+  .portfolio__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .portfolio__info {
+    position: absolute;
+    right: 9%;
+    bottom: 12%;
+    left: 9%;
+
+    @include breakpoint("laptop") {
+      opacity: 0;
+    }
+
+    .portfolio__info-list {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .portfolio__info-item {
+      font-size: 18px;
+      margin: 0 8px 8px 0;
+      padding: 6px 8px;
+      background: #474747;
+      color: #3fc8a7;
+    }
+  }
+
+  .portfolio__horizonal-lines,
+  .portfolio__vertical-lines {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 6%;
+      right: 3.75%;
+      left: 3.75%;
+      height: 2px;
+      background: #fff;
+      z-index: 2;
+
+      @include breakpoint("laptop") {
+        transform-origin: center center;
+        transition: transform 300ms ease-in-out;
+      }
+    }
+  }
+
+  .portfolio__horizonal-lines {
+    &::before,
+    &::after {
+      @include breakpoint("laptop") {
+        transform: scaleX(0);
+      }
+    }
+
+    &::after {
+      top: auto;
+      bottom: 6%;
+    }
+  }
+
+  .portfolio__vertical-lines {
+    display: block;
+
+    &::before,
+    &::after {
+      height: auto;
+      width: 2px;
+
+      @include breakpoint("laptop") {
+        transform: scaleY(0);
+      }
+    }
+
+    &::before {
+      right: auto;
+      bottom: 6%;
+    }
+
+    &::after {
+      bottom: 6%;
+      left: auto;
+    }
+  }
+
+  &.portfolio--modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1100;
+
+    .portfolio__item {
+      position: absolute;
+      top: 50%;
+      width: 75vw;
+      height: 75vh;
+      opacity: 0;
+      pointer-events: none;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+      }
+
+      &.portfolio__item--active {
+        left: 50%;
+        transform: translate(-50%,-50%) scale(1);
+        opacity: 1;
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.4);
+        z-index: 1;
+
+        &::after {
+          background: rgba(0,0,0,0.7);
+        }
+
+        .portfolio__info {
+          opacity: 1;
+        }
+      }
+
+      &.portfolio__item--previous,
+      &.portfolio__item--next {
+        box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+        opacity: 1;
+        cursor: pointer;
+
+        .portfolio__info {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+
+      &.portfolio__item--previous {
+        left: 0;
+        transform: translate(-50%,-50%) scale(0.8);
+      }
+
+      &.portfolio__item--next {
+        right: 0;
+        transform: translate(50%,-50%) scale(0.8);
+      }
+
+      .portfolio__info {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        top: 12%;
+        z-index: 1;
+
+        h3 {
+          font-size: 56px;
+          margin-bottom: auto;
+        }
+      }
+
+      .portfolio__info-list {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

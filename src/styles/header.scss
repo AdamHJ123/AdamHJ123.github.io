@@ -1,0 +1,57 @@
+body.sticky-enabled {
+  .header {
+    opacity: 1;
+    pointer-events: all;
+    transform: scaleY(1);
+
+    .header__logo {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 5px 15px;
+    z-index: 1000;
+    background: #464646;
+    box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transform: scaleY(0);
+    transform-origin: center top;
+    transition: transform 300ms linear;
+
+    @include breakpoint("tablet") {
+      height: 60px;
+      padding: 0;
+    }
+
+    @include breakpoint("desktop") {
+        height: 80px;
+    }
+
+    .header__logo {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      font-family: $font-ubuntu;
+      font-size: 30px;
+      line-height: 1;
+      text-decoration: none;
+      color: #fff;
+
+      @include breakpoint("tablet") {
+        right: auto;
+        left: 50%;
+        color: #fff;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 300ms linear 300ms;
+      }
+    }
+}

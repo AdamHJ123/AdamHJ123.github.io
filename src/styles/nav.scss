@@ -1,0 +1,170 @@
+body.nav-active {
+  @media screen and (max-width: 759px) {
+    overflow: hidden;
+
+    .nav {
+      position: fixed;
+      top: 50px;
+      right: 0;
+      left: 0;
+      height: calc(100% - 50px);
+      background: rgba(#464646, 0.9);
+      pointer-events: all;
+      opacity: 1;
+      transform: scaleY(1);
+
+      .nav__list {
+        opacity: 1;
+        transition: opacity 300ms linear 500ms;
+      }
+    }
+  }
+}
+
+body.sticky-enabled {
+  .nav {
+    @include breakpoint("tablet") {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      width: auto;
+      max-width: 100%;
+      height: 60px;
+      padding: 0 40px;
+      animation: opacity-to-full 900ms linear;
+    }
+
+    @include breakpoint("desktop") {
+      height: 80px;
+    }
+
+    .nav__list {
+      @include breakpoint("tablet") {
+        flex-wrap: nowrap;
+        align-items: center;
+        height: 100%;
+        padding: 0;
+      }
+    }
+
+    .nav__item {
+      @include breakpoint("tablet") {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      &.nav__item--button-secondary {
+        @include breakpoint("tablet") {
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  @media screen and (max-width: 759px) {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transform: scaleY(0);
+    transform-origin: center top;
+    transition: transform 300ms linear;
+  }
+
+  @include breakpoint("tablet") {
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    pointer-events: none;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 759px) {
+      padding: 30px 30px;
+      opacity: 0;
+    }
+  }
+
+  .nav__item {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: $font-ubuntu;
+
+    @include breakpoint("tablet") {
+      width: 90px;
+      margin-top: 40px;
+    }
+
+    &.nav__item--button {
+      width: calc(50% - 8px);
+      margin-right: 8px;
+      margin-bottom: 20px;
+
+      @include breakpoint("phablet") {
+        width: calc(50% - 14px);
+        margin-right: 14px;
+      }
+
+      @include breakpoint("tablet") {
+        width: 120px;
+        margin: 0;
+      }
+
+      .nav__link {
+        width: 100%;
+        border: 2px solid #3fc8a7;
+        background: #3fc8a7;
+        color: #464646;
+
+        @include breakpoint("tablet") {
+          line-height: 39px;
+          height: 40px;
+        }
+      }
+    }
+
+    &.nav__item--button-secondary {
+      margin: 0 0 20px 8px;
+
+      @include breakpoint("phablet") {
+        margin-left: 14px;
+      }
+
+      @include breakpoint("tablet") {
+        margin-bottom: 0;
+        margin-left: 20px;
+      }
+
+      .nav__link {
+        background: #464646;
+        color: #3fc8a7;
+      }
+    }
+  }
+
+  .nav__link {
+    display: block;
+    width: 100%;
+    height: 30px;
+    font-size: 18px;
+    line-height: 29px;
+    color: #fff;
+    text-decoration: none;
+
+    @include breakpoint("tablet") {
+      pointer-events: all;
+    }
+
+    &:hover {
+      color: #3fc8a7;
+    }
+  }
+}
