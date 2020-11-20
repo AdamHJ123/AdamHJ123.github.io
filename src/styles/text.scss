@@ -1,7 +1,7 @@
 h1 {
   font-family: $font-ubuntu;
   font-size: 48px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 
   @include breakpoint("tablet") {
     font-size: 70px;

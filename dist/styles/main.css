@@ -322,7 +322,7 @@ body.sticky-enabled .hero {
     color: #fff; }
     @media (min-width: 760px) {
       .hero .hero__intro {
-        margin-bottom: 20px; } }
+        margin-bottom: 28px; } }
     .hero .hero__intro p, .hero .hero__intro li {
       font-size: 24px; }
       @media (min-width: 760px) {
@@ -769,7 +769,7 @@ body.modal-enabled {
 h1 {
   font-family: "ubuntu", Arial, Helvetica, sans-serif;
   font-size: 48px;
-  margin-bottom: 14px; }
+  margin-bottom: 18px; }
   @media (min-width: 760px) {
     h1 {
       font-size: 70px; } }
