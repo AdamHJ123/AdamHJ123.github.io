@@ -36,11 +36,21 @@ body.modal-enabled {
     &::before {
       content: "";
       display: block;
-      padding-top: 60%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: linear-gradient(to bottom, rgba(#000, 0.8) 0%,rgba(#000, 0.3) 100%);
       z-index: 1;
 
       @include breakpoint("laptop") {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: auto;
+        height: auto;
+        padding-top: 60%;
         background: rgba(0,0,0,0);
         transition: background 300ms linear;
       }
@@ -109,12 +119,16 @@ body.modal-enabled {
   }
 
   .portfolio__info {
-    position: absolute;
-    right: 9%;
-    bottom: 12%;
-    left: 9%;
+    position: relative;
+    z-index: 1;
+    padding: 12% 9%;
 
     @include breakpoint("laptop") {
+      position: absolute;
+      right: 9%;
+      bottom: 12%;
+      left: 9%;
+      padding: 0;
       opacity: 0;
     }
 

@@ -5,7 +5,11 @@ body.sticky-enabled {
     transform: scaleY(1);
 
     .header__logo {
-      transform: translate(-50%, -50%) scale(1);
+      transform: translateY(-50%) scale(1);
+
+      @include breakpoint("laptop") {
+        transform: translate(-50%, -50%);
+      }
     }
   }
 }
@@ -15,7 +19,7 @@ body.sticky-enabled {
     top: 0;
     right: 0;
     left: 0;
-    padding: 5px 15px;
+    height: 52px;
     z-index: 1000;
     background: #464646;
     box-shadow: 0 0 3px 3px rgba(0,0,0,0.3);
@@ -27,7 +31,6 @@ body.sticky-enabled {
 
     @include breakpoint("tablet") {
       height: 60px;
-      padding: 0;
     }
 
     @include breakpoint("desktop") {
@@ -41,14 +44,14 @@ body.sticky-enabled {
       right: 15px;
       transform: translateY(-50%);
       font-family: $font-ubuntu;
-      font-size: 30px;
-      line-height: 1;
+      font-size: 26px;
       text-decoration: none;
       color: #fff;
 
       @include breakpoint("tablet") {
         right: auto;
         left: 50%;
+        font-size: 30px;
         color: #fff;
         transform: translate(-50%, -50%) scale(0);
         transition: transform 300ms linear 300ms;
