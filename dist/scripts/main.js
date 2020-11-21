@@ -63,6 +63,8 @@ $(function () {
     if (id === '#experience') {
       pos = pos -= 79;
     }
+    
+    $('body').removeClass('nav-active');
 
     $('body, html').animate({scrollTop: pos});
 });
